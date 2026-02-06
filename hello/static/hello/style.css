@@ -1,0 +1,123 @@
+/* ===== Body ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #edf6f0; /* soft greenish-white */
+    color: #2f4f3e;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Header ===== */
+header {
+    background: #3e7c63;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ===== Search ===== */
+.search input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px;
+    border: 1px solid #b7d1c4;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* ===== Add Button ===== */
+.add-button {
+    display: block;
+    width: 180px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 12px 0;
+    background-color: #3e7c63;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
+
+.add-button:hover {
+    background-color: #2f5c47;
+}
+
+/* ===== Book Card ===== */
+.book {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    transition: transform 0.2s;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+}
+
+.book img, .no-cover {
+    width: 140px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.no-cover {
+    background: #b7d1c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+}
+
+/* ===== Book Info ===== */
+.book div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book h2 {
+    margin: 0;
+    color: #2f4f3e;
+    font-size: 1.5em;
+}
+
+.book p {
+    margin: 5px 0;
+    color: #4a5c4a;
+}
+
+.book p em {
+    font-style: normal;
+    color: #6b8e70;
+}

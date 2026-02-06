@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Willow pages </title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fdf6e3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            color: #8b5e3c;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .book {
+            background-color: #fffaf0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .book h2 {
+            margin: 0;
+            color: #6b4226;
+        }
+        .book p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .add-button {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #8b5e3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cozy E-Library</h1>
+    <a href="{% url 'add_book' %}" class="add-button">Add New Book</a>
+    <div class="container">
+        {% for book in books %}
+        <div class="book">
+            <h2>{{ book.title }}</h2>
+            <p><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>Genre:</strong> {{ book.genre }}</p>
+            <p>{{ book.description }}</p>
+        </div>
+        {% empty %}
+        <p>No books yet. Add some cozy novels!</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'hello/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Willow Pages</h1>
+    <p>Your cozy zone to read books and comics</p>
+</header>
+
+<div class="container">
+    <form class="search" method="get">
+        <input type="text" name="q" placeholder="Search by title or author…">
+    </form>
+
+    <a href="{% url 'add_book' %}" class="add-button">Add New Book</a>
+
+    {% for book in books %}
+    <div class="book">
+        {% if book.cover %}
+        <img src="{{ book.cover.url }}" alt="{{ book.title }}">
+        {% else %}
+        <div class="no-cover">No Cover</div>
+        {% endif %}
+        <div>
+            <h2>{{ book.title }}</h2>
+            <p><em>{{ book.author }}</em></p>
+            <p>{{ book.description|truncatechars:120 }}</p>
+            <a href="{% url 'edit_book' book.id %}" style="color:#3e7c63; margin-right:10px;">Edit</a>
+            <a href="{% url 'delete_book' book.id %}" style="color:#c44;">Delete</a>
+        </div>
+    </div>
+    {% empty %}
+    <p>No books yet. Add some books</p>
+    {% endfor %}
+</div>
+</body>
+</html>

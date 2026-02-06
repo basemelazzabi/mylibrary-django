@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if edit %}Edit{% else %}Add{% endif %} Book</title>
+    <link rel="stylesheet" href="{% static 'hello/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{% if edit %}Edit{% else %}Add{% endif %} new Book</h1>
+    </header>
+
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
